@@ -12,7 +12,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
-  late final WebViewController _controller;
+  // late final WebViewController _controller;
   List<EventItem> eventList = [
     EventItem(
       imagePath: "lib/assets/1.png",
@@ -67,37 +67,37 @@ class _MainPageState extends State<MainPage> {
   void initState() {
     super.initState();
 
-    final WebViewController controller = WebViewController();
+    //   final WebViewController controller = WebViewController();
 
-    controller
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(const Color(0x00000000))
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onProgress: (int progress) {
-            debugPrint('WebView is loading (progress : $progress%)');
-          },
-          onPageStarted: (String url) {
-            debugPrint('Page started loading: $url');
-          },
-          onPageFinished: (String url) {
-            debugPrint('Page finished loading: $url');
-          },
-          onWebResourceError: (WebResourceError error) {
-            debugPrint('''
-  Page resource error:
-    code: ${error.errorCode}
-    description: ${error.description}
-    errorType: ${error.errorType}
-    isForMainFrame: ${error.isForMainFrame}
-          ''');
-          },
-        ),
-      )
-      ..loadRequest(Uri.parse(
-          'https://[www.dsd.gov.my/index.php/skillsmalaysia-menu/peringkat-malaysia/worldskills-malaysia-belia-wsmb]'));
+    //   controller
+    //     ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    //     ..setBackgroundColor(const Color(0x00000000))
+    //     ..setNavigationDelegate(
+    //       NavigationDelegate(
+    //         onProgress: (int progress) {
+    //           debugPrint('WebView is loading (progress : $progress%)');
+    //         },
+    //         onPageStarted: (String url) {
+    //           debugPrint('Page started loading: $url');
+    //         },
+    //         onPageFinished: (String url) {
+    //           debugPrint('Page finished loading: $url');
+    //         },
+    //         onWebResourceError: (WebResourceError error) {
+    //           debugPrint('''
+    // Page resource error:
+    //   code: ${error.errorCode}
+    //   description: ${error.description}
+    //   errorType: ${error.errorType}
+    //   isForMainFrame: ${error.isForMainFrame}
+    //         ''');
+    //         },
+    //       ),
+    //     )
+    //     ..loadRequest(Uri.parse(
+    //         'https://[www.dsd.gov.my/index.php/skillsmalaysia-menu/peringkat-malaysia/worldskills-malaysia-belia-wsmb]'));
 
-    _controller = controller;
+    //   _controller = controller;
   }
 
   @override
